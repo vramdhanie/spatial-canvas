@@ -1,10 +1,21 @@
 # Spatial Canvas
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A524-5FA04E?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![pnpm](https://img.shields.io/badge/pnpm-10-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![Turborepo](https://img.shields.io/badge/Turborepo-2-EF4444?logo=turborepo&logoColor=white)](https://turborepo.com/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
+[![tldraw](https://img.shields.io/badge/tldraw-5-1D1D1D)](https://tldraw.dev/)
+[![Yjs](https://img.shields.io/badge/Yjs-CRDT-30BCED)](https://yjs.dev/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-8-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Claude](https://img.shields.io/badge/AI-Claude-D97757?logo=anthropic&logoColor=white)](https://www.anthropic.com/claude)
+
 A person and an AI thinking together on a shared, infinite, spatial canvas. This repo is the
 **local prototype**: every component of the target stack running on one machine.
 
-Planning docs (outside this repo): `~/Code/notes/Work/SpatialCanvas/` —
-`Scope.md`, `MVP.md`, `TechEvaluation.md`, `PrototypePlan.md`.
+This is my most ambitious experiment to date, a totally new way to interact with an agent!
 
 ## Prerequisites
 
@@ -65,3 +76,11 @@ through the web dev server's single-origin proxy.
 - TypeScript is pinned to 6.0.x because `typescript-eslint` does not yet support TypeScript 7.
 - MinIO no longer publishes Docker images, so object storage uses `fake-gcs-server` (GCS-compatible,
   matching the production target).
+
+## License
+
+[MIT](LICENSE) © 2026 Vincent Ramdhanie.
+
+Third-party dependencies keep their own licenses. Notably, the **tldraw SDK is not MIT**: it is
+free in development but requires a tldraw license key for production deployments
+(see [tldraw.dev/pricing](https://tldraw.dev/pricing)).

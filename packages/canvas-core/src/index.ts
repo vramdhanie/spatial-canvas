@@ -1,12 +1,11 @@
 /**
  * canvas-core — the library-agnostic canonical canvas model.
  *
- * This package will own (PrototypePlan M1):
- *  - the canonical canvas schema stored in the Yjs document (items, edges, groups),
- *  - the tldraw adapter (the only place tldraw types are allowed),
- *  - custom shape definitions,
- *  - read/write helpers shared by the web app and the agents service.
+ * Entry points:
+ *  - `@sc/canvas-core`            canonical model (no renderer; safe for servers)
+ *  - `@sc/canvas-core/tldraw`     tldraw adapter + <CanvasView> (the only place tldraw is used)
+ *  - `@sc/canvas-core/styles.css` renderer styles
  *
  * Rule: no tldraw types may leak out of this package.
  */
-export const CANVAS_SCHEMA_VERSION = 1
+export * from './model.ts'

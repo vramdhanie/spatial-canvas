@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@hocuspocus/provider": "^4.8.0",
     "@sc/canvas-core": "workspace:*",
     "@sc/design-system": "workspace:*",
     "@sc/shared": "workspace:*",
@@ -16,7 +17,8 @@
     "@tanstack/react-router": "^1.170.46",
     "firebase": "^13.4.0",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "yjs": "^13.6.33"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.5",

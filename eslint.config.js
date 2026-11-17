@@ -9,7 +9,11 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['apps/web/**/*.{ts,tsx}', 'packages/design-system/**/*.{ts,tsx}'],
+    files: [
+      'apps/web/**/*.{ts,tsx}',
+      'packages/design-system/**/*.{ts,tsx}',
+      'packages/canvas-core/**/*.{ts,tsx}',
+    ],
     languageOptions: { globals: globals.browser },
   },
   {

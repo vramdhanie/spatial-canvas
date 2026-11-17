@@ -1,16 +1,27 @@
 import { Button, cn } from '@sc/design-system'
 import { useQuery } from '@tanstack/react-query'
+import { useNavigate } from '@tanstack/react-router'
 import { probeAll } from '../lib/health.ts'
 
-/** M0 placeholder: the canvas list arrives in M2. For now, a stack health check. */
+const newCanvasId = () => crypto.randomUUID().replaceAll('-', '').slice(0, 12)
+
+/** Placeholder until M2: a "new canvas" button plus a stack health check. */
 export function HomePage() {
+  const navigate = useNavigate()
   const { data, isFetching, refetch } = useQuery({ queryKey: ['health'], queryFn: probeAll })
 
   return (
     <div className="mx-auto max-w-xl space-y-6 p-8">
-      <div>
-        <h1 className="text-2xl font-semibold">Your canvases</h1>
-        <p className="text-muted">Canvas list arrives in M2. Below: local stack health.</p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-semibold">Your canvases</h1>
+          <p className="text-muted">Canvas list arrives in M2. Below: local stack health.</p>
+        </div>
+        <Button
+          onClick={() => void navigate({ to: '/c/$canvasId', params: { canvasId: newCanvasId() } })}
+        >
+          New canvas
+        </Button>
       </div>
 
       <section className="rounded-lg border border-border bg-surface p-4">
