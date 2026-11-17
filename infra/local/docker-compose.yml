@@ -1,0 +1,47 @@
+name: spatial-canvas
+
+services:
+  # MongoDB with Atlas Search / Vector Search built in (matches Atlas in production).
+  mongo:
+    image: mongodb/mongodb-atlas-local:8.0.10
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+      - mongo-config:/data/configdb
+    restart: unless-stopped
+
+  # Yjs backplane — only exercised when running two sync nodes (PrototypePlan S2).
+  redis:
+    image: redis:8.8.4-alpine
+    ports:
+      - '6379:6379'
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  # Google Cloud Storage emulator (production target is GCS).
+  # Buckets are pre-created from ./gcs-seed/<bucket-name>/.
+  gcs:
+    image: fsouza/fake-gcs-server:1.56.1
+    command:
+      - -scheme=http
+      - -port=4443
+      - -public-host=localhost:4443
+      - -backend=filesystem
+      - -filesystem-root=/storage
+      - -data=/seed
+    ports:
+      - '4443:4443'
+    volumes:
+      - ./gcs-seed:/seed:ro
+      - gcs-data:/storage
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+  mongo-config:
+  gcs-data:

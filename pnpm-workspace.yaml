@@ -1,0 +1,12 @@
+packages:
+  - apps/*
+  - services/*
+  - packages/*
+  - infra/*
+
+# Dependency install scripts: allow only what's needed.
+onlyBuiltDependencies:
+  - esbuild # native binary used by tsx
+ignoredBuiltDependencies:
+  - '@firebase/util' # optional auto-init defaults; not used
+  - protobufjs # version-check script only

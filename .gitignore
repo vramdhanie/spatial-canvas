@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.turbo/
+coverage/
+*.log
+.DS_Store
+
+# local secrets / config
+.env
+.env.*
+!.env.example
+
+# Firebase emulator state (persisted between runs, never committed)
+infra/local/.emulator-data/
+firebase-debug.log
+ui-debug.log

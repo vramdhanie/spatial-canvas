@@ -1,0 +1,21 @@
+/* Tailwind v4 theme mirroring src/tokens.ts. Import after `@import "tailwindcss";`. */
+@source "./";
+
+@theme {
+  --color-background: #fafaf9;
+  --color-surface: #ffffff;
+  --color-foreground: #1c1917;
+  --color-muted: #78716c;
+  --color-border: #e7e5e4;
+  --color-primary: #4f46e5;
+  --color-primary-foreground: #ffffff;
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
